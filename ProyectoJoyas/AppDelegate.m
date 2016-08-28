@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <DigitsKit/DigitsKit.h>
+#import "PayPalMobile.h"
 
 @import GoogleMaps;
 
@@ -24,6 +25,9 @@
     // Override point for customization after application launch.
     //[Digits sharedInstance].sessionUpdateDelegate = self;
     [GMSServices provideAPIKey:@"AIzaSyCJOtLrQgcav1XujWopxcKcAyxHCfJ-P8w"];
+    // ...
+    [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentProduction :@"YOUR_CLIENT_ID_FOR_PRODUCTION",                                                     PayPalEnvironmentSandbox : @"YOUR_CLIENT_ID_FOR_SANDBOX"}];
+    // ...
     [Fabric with:@[[Digits class]]];
     return YES;
 }

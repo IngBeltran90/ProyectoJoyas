@@ -22,5 +22,7 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *btnBack;
 - (IBAction)btnPressBack:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btnComprar;
+- (IBAction)btnComprar:(id)sender;
 
 @end

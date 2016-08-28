@@ -54,6 +54,9 @@
     [self performSegueWithIdentifier:@"Home" sender:self];
 }
 
+- (IBAction)btnComprar:(id)sender {
+    [self performSegueWithIdentifier:@"PaypalViewController" sender:self];
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
