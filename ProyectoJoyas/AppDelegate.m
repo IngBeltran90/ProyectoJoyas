@@ -10,6 +10,8 @@
 #import <Fabric/Fabric.h>
 #import <DigitsKit/DigitsKit.h>
 
+@import GoogleMaps;
+
 
 @interface AppDelegate ()
 
@@ -21,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //[Digits sharedInstance].sessionUpdateDelegate = self;
+    [GMSServices provideAPIKey:@"AIzaSyCJOtLrQgcav1XujWopxcKcAyxHCfJ-P8w"];
     [Fabric with:@[[Digits class]]];
     return YES;
 }

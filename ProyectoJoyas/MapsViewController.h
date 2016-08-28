@@ -12,5 +12,6 @@
 @interface MapsViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIButton *btnBack;
 - (IBAction)btnPressBack:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewMap;
 
 @end

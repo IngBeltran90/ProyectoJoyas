@@ -28,10 +28,10 @@
         if (session.userID) {
             // TODO: associate the session userID with your user model
             NSString *msg = [NSString stringWithFormat:@"Numero de celular: %@", session.phoneNumber];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ya estas logeado!"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Gracias por utilizar nuestra app!"
                                                             message:msg
                                                            delegate:nil
-                                                  cancelButtonTitle:@"ACEPTAR"
+                                                  cancelButtonTitle:@"Continuar"
                                                   otherButtonTitles:nil];
             [alert show];
         
