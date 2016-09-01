@@ -12,6 +12,12 @@ extern NSString         *stDummy;
 extern NSMutableArray   *maIntroTitles;
 extern NSMutableArray   *maIntroImgs;
 
+extern NSMutableArray *array_stuffNames;
+extern NSMutableArray *array_stuffPrices;
+extern NSMutableArray *array_stuffQuant;
+extern NSMutableArray *array_stuffImgs;
+extern float   TotalApagar;
+
 @interface Declarations : NSObject
 
 @end

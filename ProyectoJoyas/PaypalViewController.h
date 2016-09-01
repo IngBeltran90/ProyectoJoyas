@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "PayPalMobile.h"
+#import "ShopCarTableCell.h"
+#import "Declarations.h"
 
 @interface PaypalViewController : UIViewController<PayPalPaymentDelegate>
 @property (nonatomic, strong, readwrite) PayPalConfiguration *payPalConfiguration;
+@property (strong, nonatomic) IBOutlet UITableView *tblAmande;
+@property (strong, nonatomic) IBOutlet UIButton *btnBack;
+@property (strong, nonatomic) IBOutlet UILabel *lblTotalPagar;
+
+
+
+@property NSInteger indexSelectedShop;
 
 @end
+

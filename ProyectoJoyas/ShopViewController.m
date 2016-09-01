@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.stuffQuant = self.textQuant.text;
+    self.lblTotal.text  =self.stuffPrices;
     self.lblProduct.text        = self.stuffNames;
     self.PriceProduct.text      = self.stuffPrices;
     self.imgProduct.image   = [UIImage imageNamed:self.stuffImgs];
@@ -44,9 +45,17 @@
     
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)changeLblTotal{
+    // self.lblTotal.text = (NSString)self.stuffPrices.intValue;
+    float valor = [[self.textQuant text] integerValue];
+    self.lblTotal.text = [NSString stringWithFormat:@"%.2f", (self.stuffPrices.intValue * valor)];
+    self.stuffQuant = self.textQuant.text;
 }
 
 
@@ -63,6 +72,34 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.destinationViewController isKindOfClass:[Home class]]) {
+        
+    }
+    if ([segue.destinationViewController isKindOfClass:[PaypalViewController class]]) {
+        
+        NSLog(@"entro a payapl");
+
+        [array_stuffNames addObject:self.stuffNames];
+         [array_stuffPrices addObject:self.stuffPrices];
+         [array_stuffQuant addObject:self.stuffQuant];
+         [array_stuffImgs addObject:self.stuffImgs];
+        
+        /*
+        nextClass.indexSelectedShop =0;
+        
+        nextClass.array_stuffNames[nextClass.indexSelectedShop]       = self.stuffNames;
+        nextClass.array_stuffPrices[nextClass.indexSelectedShop]      = self.stuffPrices;
+        nextClass.array_stuffQuant[nextClass.indexSelectedShop]       = self.textQuant;
+        nextClass.array_stuffImgs[nextClass.indexSelectedShop]        = self.stuffMaterial;
+        */
+        
+        NSString *test = [array_stuffNames  objectAtIndex:0];
+        NSLog(@"Nombre en 0: %@",test);
+        
+    /*
+        nextClass.indexSelectedShop++;
+        NSLog(@"siguiente index: %ld",(long)nextClass.indexSelectedShop);
+     */
+        
     }
 }
 

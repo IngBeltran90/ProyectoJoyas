@@ -11,12 +11,15 @@
 
 @interface PaypalViewController ()
 
+
 @end
+float fTotalApagar;
 
 @implementation PaypalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initController];
     // Do any additional setup after loading the view.
 }
 
@@ -24,6 +27,54 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)initController {
+    fTotalApagar = 0;
+}
+/**********************************************************************************************/
+#pragma mark - Table source and delegate methods
+/**********************************************************************************************/
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+//-------------------------------------------------------------------------------
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return array_stuffNames.count;
+}
+//-------------------------------------------------------------------------------
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 116;
+}
+//-------------------------------------------------------------------------------
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Initialize cells
+    ShopCarTableCell *cell = (ShopCarTableCell *)[tableView dequeueReusableCellWithIdentifier:@"ShopCarTableCell"];
+    
+    if (cell == nil) {
+        [tableView registerNib:[UINib nibWithNibName:@"ShopCarTableCell" bundle:nil] forCellReuseIdentifier:@"ShopCarTableCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ShopCarTableCell"];
+    }
+    //Fill cell with info from arrays
+    cell.lblNameStuff.text       = array_stuffNames[indexPath.row];
+    cell.lblPrice.text       = array_stuffPrices[indexPath.row];
+    cell.lblQuant.text   =array_stuffQuant[indexPath.row];
+    float quant = [[cell.lblQuant text] integerValue];
+    float price = [[cell.lblPrice text] integerValue];
+    fTotalApagar = ((price * quant)+fTotalApagar);
+    cell.lblSubtotal.text = [NSString stringWithFormat:@"%.2f", price * quant];
+    self.lblTotalPagar.text  = [NSString stringWithFormat:@"%.2f",fTotalApagar];
+    cell.imgStuff.image   = [UIImage imageNamed:array_stuffImgs[indexPath.row]];
+    
+    return cell;
+}
+//-------------------------------------------------------------------------------
+/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    indexSelectedShop = indexPath.row;
+
+    [self performSegueWithIdentifier:@"ShopViewController" sender:self];
+    
+}
+*/
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -57,9 +108,9 @@
     PayPalPayment *payment = [[PayPalPayment alloc] init];
     
     // Amount, currency, and description
-    payment.amount = [[NSDecimalNumber alloc] initWithString:@"39.95"];
-    payment.currencyCode = @"USD";
-    payment.shortDescription = @"Awesome saws";
+    payment.amount = [[NSDecimalNumber alloc] initWithString:self.lblTotalPagar.text];
+    payment.currencyCode = @"MXN";
+    payment.shortDescription = @"Joyeria Amande";
     
     // Use the intent property to indicate that this is a "sale" payment,
     // meaning combined Authorization + Capture.

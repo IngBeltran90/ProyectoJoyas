@@ -37,7 +37,7 @@ NSInteger indexSelected;
     
     self.stuffMaterial  = [[NSMutableArray alloc] initWithObjects: @"Oro Blanco", @"Resina Colores", @"Laton Chapeado", @"Plata, oro, chapa", @"Oro o Plata", @"Chapeados", nil];
     
-    self.stuffPrices   = [[NSMutableArray alloc] initWithObjects: @"2,500.00", @"150.00", @"250.00", @"200.00", @"3,000.00", @"550.00", nil];
+    self.stuffPrices   = [[NSMutableArray alloc] initWithObjects: @"2500.00", @"150.00", @"250.00", @"200.00", @"3000.00", @"550.00", nil];
 }
 /**********************************************************************************************/
 #pragma mark - Table source and delegate methods

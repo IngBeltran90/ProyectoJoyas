@@ -17,6 +17,8 @@
 		2B789F781D6FDB0800967986 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789F761D6FDB0800967986 /* TableViewCell.m */; };
 		2B789F791D6FDB0800967986 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B789F771D6FDB0800967986 /* TableViewCell.xib */; };
 		2B789F7C1D6FE82E00967986 /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B789F7B1D6FE82E00967986 /* CatalogViewController.m */; };
+		2BBD6CC11D77672700455DF8 /* ShopCarTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD6CBF1D77672700455DF8 /* ShopCarTableCell.m */; };
+		2BBD6CC21D77672700455DF8 /* ShopCarTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BBD6CC01D77672700455DF8 /* ShopCarTableCell.xib */; };
 		2BCB38DF1D6DF64800722EC3 /* Declarations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB38DE1D6DF64800722EC3 /* Declarations.m */; };
 		2BCB38E61D6DF87500722EC3 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB38E31D6DF87500722EC3 /* Home.m */; };
 		2BCB38E71D6DF87500722EC3 /* Intro.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB38E51D6DF87500722EC3 /* Intro.m */; };
@@ -74,6 +76,9 @@
 		2B789F771D6FDB0800967986 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2B789F7A1D6FE82E00967986 /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogViewController.h; sourceTree = "<group>"; };
 		2B789F7B1D6FE82E00967986 /* CatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogViewController.m; sourceTree = "<group>"; };
+		2BBD6CBE1D77672700455DF8 /* ShopCarTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarTableCell.h; sourceTree = "<group>"; };
+		2BBD6CBF1D77672700455DF8 /* ShopCarTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarTableCell.m; sourceTree = "<group>"; };
+		2BBD6CC01D77672700455DF8 /* ShopCarTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCarTableCell.xib; sourceTree = "<group>"; };
 		2BCB38DD1D6DF64800722EC3 /* Declarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Declarations.h; sourceTree = "<group>"; };
 		2BCB38DE1D6DF64800722EC3 /* Declarations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Declarations.m; sourceTree = "<group>"; };
 		2BCB38E21D6DF87500722EC3 /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
@@ -263,6 +268,9 @@
 				2B789F751D6FDB0800967986 /* TableViewCell.h */,
 				2B789F761D6FDB0800967986 /* TableViewCell.m */,
 				2B789F771D6FDB0800967986 /* TableViewCell.xib */,
+				2BBD6CBE1D77672700455DF8 /* ShopCarTableCell.h */,
+				2BBD6CBF1D77672700455DF8 /* ShopCarTableCell.m */,
+				2BBD6CC01D77672700455DF8 /* ShopCarTableCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -417,6 +425,7 @@
 				8E82F3A21D7279BA005FB780 /* Podfile in Resources */,
 				2BCB38EC1D6DF88500722EC3 /* cellAmande.xib in Resources */,
 				2B71AFC31D6BEC8F00DFB524 /* Assets.xcassets in Resources */,
+				2BBD6CC21D77672700455DF8 /* ShopCarTableCell.xib in Resources */,
 				2BCB39511D6E3A3800722EC3 /* email.png in Resources */,
 				2BCB39521D6E3A3800722EC3 /* esclava.jpg in Resources */,
 				2B71AFBE1D6BEC8F00DFB524 /* Main.storyboard in Resources */,
@@ -496,6 +505,7 @@
 				2BCB38E61D6DF87500722EC3 /* Home.m in Sources */,
 				2BCB39601D6E58F500722EC3 /* EmailViewController.m in Sources */,
 				2BCB395D1D6E58EA00722EC3 /* ShopViewController.m in Sources */,
+				2BBD6CC11D77672700455DF8 /* ShopCarTableCell.m in Sources */,
 				2BCB395A1D6E55E200722EC3 /* MapsViewController.m in Sources */,
 				2B789F781D6FDB0800967986 /* TableViewCell.m in Sources */,
 				2B71AFB81D6BEC8E00DFB524 /* AppDelegate.m in Sources */,

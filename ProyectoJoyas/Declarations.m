@@ -15,6 +15,12 @@ NSString *stDummy;
 NSMutableArray  *maIntroTitles;
 NSMutableArray  *maIntroImgs;
 
+ NSMutableArray *array_stuffNames;
+ NSMutableArray *array_stuffPrices;
+ NSMutableArray *array_stuffQuant;
+ NSMutableArray *array_stuffImgs;
+float         TotalApagar;
+
 @implementation Declarations
 
 @end

@@ -72,9 +72,17 @@
 }
 //-------------------------------------------------------------------------------
 - (void)initController {
+    array_stuffNames = [[NSMutableArray alloc] init];
+    array_stuffPrices = [[NSMutableArray alloc] init];//falta qponerlo en la siguiente clase
+    array_stuffQuant = [[NSMutableArray alloc] init]; //falta qponerlo en la siguiente clase
+    array_stuffImgs = [[NSMutableArray alloc] init];
+    
     maIntroTitles   = [[NSMutableArray alloc] initWithObjects: @"Somos fabricantes \nCambia de pagina para continuar", @"Encuentra tus accesorios favoritos desde tu celular\n\nCambia de pagina para continuar", @"Contactanos directamente\n\nCambia de pagina para continuar",@"Conoce todo nuestro catalogo en linea\n\nCambia de pagina para continuar", nil];
     
     maIntroImgs     = [[NSMutableArray alloc] initWithObjects: @"anillos.jpg", @"aretes.jpg", @"collares.jpg",@"dije.jpg", nil];
+    
+    
+    
     
     [self createPageViews];
 }
