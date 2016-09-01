@@ -261,17 +261,17 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
             </objects>
             <point key="canvasLocation" x="1264" y="1801"/>
         </scene>
-        <!--Catalogo-->
+        <!--CatalogViewController-->
         <scene sceneID="Wyh-Lo-9HQ">
             <objects>
-                <viewController storyboardIdentifier="Catalogo" id="XQ8-rY-H2t" customClass="CatalogViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CatalogViewController" title="CatalogViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XQ8-rY-H2t" userLabel="CatalogViewController" customClass="CatalogViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mPt-xa-pRQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t2Q-Fm-786">
-                                <rect key="frame" x="110" y="505" width="100" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="20" y="500" width="122" height="43"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="Regresar"/>
@@ -291,6 +291,18 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                                     <outlet property="delegate" destination="XQ8-rY-H2t" id="Z2F-9j-k7T"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OWz-NL-zFy">
+                                <rect key="frame" x="188" y="500" width="120" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" title="Ir al carrito."/>
+                                <connections>
+                                    <action selector="btnIrAlCarrito:" destination="XQ8-rY-H2t" eventType="touchUpInside" id="QP9-IY-70e"/>
+                                    <action selector="btnPressBack:" destination="XQ8-rY-H2t" eventType="touchUpInside" id="I8g-iH-MGm"/>
+                                    <action selector="btnPressBack:" destination="Q7O-aI-usj" eventType="touchUpInside" id="MoV-Qa-p8x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -301,16 +313,17 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                         <outlet property="tblAmande" destination="oGR-IS-N5U" id="ch6-Sm-3a0"/>
                         <segue destination="wvG-sG-jsM" kind="push" identifier="ShopViewController" id="swO-4i-ijB"/>
                         <segue destination="iba-WN-F8P" kind="modal" identifier="Home" id="stg-w6-nPw"/>
+                        <segue destination="jdV-E4-Qfm" kind="modal" identifier="PayPalViewController" id="2Ng-7i-etb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42q-uW-sHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1250" y="2545"/>
         </scene>
-        <!--Shop View Controller-->
+        <!--ShopViewController-->
         <scene sceneID="HNu-VO-MGO">
             <objects>
-                <viewController storyboardIdentifier="ShopViewController" id="wvG-sG-jsM" customClass="ShopViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wvG-sG-jsM" userLabel="ShopViewController" customClass="ShopViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tFJ-50-VQg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,16 +373,6 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="hdQ-WC-Ons">
-                                <rect key="frame" x="233" y="249" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="changeLblTotal" destination="wvG-sG-jsM" eventType="editingChanged" id="Bbh-wc-bqc"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ba5-M5-V6Q">
                                 <rect key="frame" x="28" y="342" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -441,6 +444,16 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="hdQ-WC-Ons">
+                                <rect key="frame" x="233" y="249" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="changeLblTotal" destination="wvG-sG-jsM" eventType="editingChanged" id="Bbh-wc-bqc"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -461,7 +474,7 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvO-3N-GxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="2545"/>
+            <point key="canvasLocation" x="1919" y="2245"/>
         </scene>
         <!--Paypal View Controller-->
         <scene sceneID="lk2-Xj-Jew">
@@ -472,7 +485,7 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Wf-WA-wqB" userLabel="btnPagar">
-                                <rect key="frame" x="85" y="511" width="151" height="30"/>
+                                <rect key="frame" x="138" y="511" width="151" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -483,16 +496,6 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                                     <action selector="pay" destination="jdV-E4-Qfm" eventType="touchUpInside" id="e00-a7-D5C"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J5c-Ya-wbV">
-                                <rect key="frame" x="0.0" y="62" width="320" height="362"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="jdV-E4-Qfm" id="t6Y-Vq-Za7"/>
-                                    <outlet property="delegate" destination="jdV-E4-Qfm" id="ht0-sf-6FP"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total a Pagar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XrP-E4-0HN">
                                 <rect key="frame" x="47" y="474" width="110" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
@@ -509,7 +512,7 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7T-sg-dI3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7T-sg-dI3">
                                 <rect key="frame" x="155" y="474" width="95" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <animations/>
@@ -517,19 +520,40 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J5c-Ya-wbV" userLabel="tblCartShop">
+                                <rect key="frame" x="0.0" y="62" width="320" height="362"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jdV-E4-Qfm" id="t6Y-Vq-Za7"/>
+                                    <outlet property="delegate" destination="jdV-E4-Qfm" id="ht0-sf-6FP"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BDB-0J-ODi">
+                                <rect key="frame" x="14" y="497" width="97" height="57"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <animations/>
+                                <state key="normal" title="&lt; Regresar"/>
+                                <connections>
+                                    <action selector="btnAtras:" destination="jdV-E4-Qfm" eventType="touchUpInside" id="Jxr-g5-c84"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="baw-lF-5cD"/>
                     <connections>
+                        <outlet property="btnAtraso" destination="BDB-0J-ODi" id="Q9i-fD-3oE"/>
                         <outlet property="lblTotalPagar" destination="a7T-sg-dI3" id="GWa-It-pGF"/>
-                        <outlet property="tblAmande" destination="J5c-Ya-wbV" id="dRp-LI-Ssj"/>
+                        <outlet property="tblShopCart" destination="J5c-Ya-wbV" id="Kgi-sK-v2r"/>
+                        <segue destination="XQ8-rY-H2t" kind="modal" identifier="CatalogViewController" id="z0S-k9-2zG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhf-Zt-UdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2166" y="2545"/>
+            <point key="canvasLocation" x="1914" y="3125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gla-qb-fD8">
@@ -670,6 +694,8 @@ Venta mayoreo de joyería fina (chapa de 14k) en Magno Centro Joyero local 1040 
         <image name="question.jpg" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PE9-xB-yql"/>
+        <segue reference="TlF-c6-U92"/>
+        <segue reference="z0S-k9-2zG"/>
+        <segue reference="stg-w6-nPw"/>
     </inferredMetricsTieBreakers>
 </document>

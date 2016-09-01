@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Declarations.h"
 
 @interface ShopCarTableCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *lblNameStuff;

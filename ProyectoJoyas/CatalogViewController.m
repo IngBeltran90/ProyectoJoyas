@@ -31,6 +31,7 @@ NSInteger indexSelected;
 }
 //-------------------------------------------------------------------------------
 - (void)initController {
+    boDirectToShopCart=0;
     self.stuffNames   = [[NSMutableArray alloc] initWithObjects: @"Anillos de matrimonio", @"Aretes", @"Collar Artesanal", @"Dijes & Nombres", @"Esclavas Personalizadas", @"Juegos completos", nil];
     
     self.stuffImgs   = [[NSMutableArray alloc] initWithObjects: @"anillos.jpg", @"aretes.jpg", @"collares.jpg", @"dije.jpg", @"esclava.jpg", @"anillos.jpg", nil];
@@ -93,7 +94,7 @@ NSInteger indexSelected;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.destinationViewController isKindOfClass:[Home class]]) {
+    if ([segue.destinationViewController isKindOfClass:[PaypalViewController class]]) {
         
     }
     if ([segue.destinationViewController isKindOfClass:[ShopViewController class]]) {
@@ -103,5 +104,10 @@ NSInteger indexSelected;
         destination.stuffImgs          = self.stuffImgs[indexSelected];
         destination.stuffMaterial     = self.stuffMaterial[indexSelected];
     }
+}
+- (IBAction)btnIrAlCarrito:(id)sender {
+    boDirectToShopCart =1;
+    Home *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PaypalViewController"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 @end

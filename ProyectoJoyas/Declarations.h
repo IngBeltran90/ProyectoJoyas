@@ -18,6 +18,8 @@ extern NSMutableArray *array_stuffQuant;
 extern NSMutableArray *array_stuffImgs;
 extern float   TotalApagar;
 
+extern int boDirectToShopCart;
+
 @interface Declarations : NSObject
 
 @end

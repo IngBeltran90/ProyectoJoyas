@@ -10,8 +10,10 @@
 #import "Home.h"
 #import "TableViewCell.h"
 #import "ShopViewController.h"
+#import "PaypalViewController.h"
 
 @interface CatalogViewController : UIViewController
+- (IBAction)btnIrAlCarrito:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *tblAmande;
 @property (strong, nonatomic) IBOutlet UIButton *btnBack;
 - (IBAction)btnPressBack:(id)sender;

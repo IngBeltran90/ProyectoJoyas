@@ -19,6 +19,7 @@ float fTotalApagar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tblShopCart.editing=YES;
     [self initController];
     // Do any additional setup after loading the view.
 }
@@ -29,6 +30,14 @@ float fTotalApagar;
 }
 - (void)initController {
     fTotalApagar = 0;
+    if (boDirectToShopCart == 1) {
+        NSLog(@"Entro en si HIDDEN");
+        self.btnAtraso.hidden = NO;
+    } else {
+        NSLog(@"Entro en si HIDDEN");
+        self.btnAtraso.hidden = YES;
+    }
+    
 }
 /**********************************************************************************************/
 #pragma mark - Table source and delegate methods
@@ -59,15 +68,51 @@ float fTotalApagar;
     cell.lblQuant.text   =array_stuffQuant[indexPath.row];
     float quant = [[cell.lblQuant text] integerValue];
     float price = [[cell.lblPrice text] integerValue];
-    fTotalApagar = ((price * quant)+fTotalApagar);
+    
     cell.lblSubtotal.text = [NSString stringWithFormat:@"%.2f", price * quant];
+    
+    fTotalApagar = ((price * quant)+fTotalApagar);
     self.lblTotalPagar.text  = [NSString stringWithFormat:@"%.2f",fTotalApagar];
     cell.imgStuff.image   = [UIImage imageNamed:array_stuffImgs[indexPath.row]];
     
     return cell;
 }
-//-------------------------------------------------------------------------------
-/*
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSInteger index = indexPath.row;
+        float quant = [array_stuffQuant[index] integerValue];
+        float price = [array_stuffPrices[index] integerValue];
+        
+        fTotalApagar = (fTotalApagar-(price * quant));
+        self.lblTotalPagar.text  = [NSString stringWithFormat:@"%.2f",fTotalApagar];
+        
+        [array_stuffNames removeObjectAtIndex:index];
+        [array_stuffPrices removeObjectAtIndex:index];
+        [array_stuffQuant removeObjectAtIndex:index];
+        [array_stuffImgs removeObjectAtIndex:index];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                         withRowAnimation:UITableViewRowAnimationFade];
+        
+        
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)aTableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tblShopCart.editing)
+    {
+        return UITableViewCellEditingStyleDelete;
+    }
+    
+    return UITableViewCellEditingStyleNone;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     indexSelectedShop = indexPath.row;
 
@@ -75,7 +120,7 @@ float fTotalApagar;
     
 }
 */
-
+//-------------------------------------------------------------------------------
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -103,6 +148,8 @@ float fTotalApagar;
 // SomeViewController.m
 
 - (IBAction)pay {
+    if (fTotalApagar>0) {
+        
     
     // Create a PayPalPayment
     PayPalPayment *payment = [[PayPalPayment alloc] init];
@@ -146,6 +193,12 @@ float fTotalApagar;
     
     // Present the PayPalPaymentViewController.
     [self presentViewController:paymentViewController animated:YES completion:nil];
+    
+
+        
+    }else{
+        NSLog(@"No tienes nada que pagar.....");
+    }
 }
 
 #pragma mark - PayPalPaymentDelegate methods
@@ -173,6 +226,18 @@ float fTotalApagar;
     // Send confirmation to your server; your server should verify the proof of payment
     // and give the user their goods or services. If the server is not reachable, save
     // the confirmation and try again later.
+    [array_stuffNames removeAllObjects];
+    [array_stuffPrices removeAllObjects];
+    [array_stuffQuant removeAllObjects];
+    [array_stuffImgs removeAllObjects];
+    fTotalApagar=0;
+    self.lblTotalPagar.text  = [NSString stringWithFormat:@"%.2f",fTotalApagar];
+    [self.tblShopCart reloadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    //[self.navigationController popToViewController:self animated:YES];
+    //Home *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Home"];
+    //[self presentViewController:vc animated:YES completion:nil];
 }
 
 /*
@@ -185,4 +250,9 @@ float fTotalApagar;
 }
 */
 
+- (IBAction)btnAtras:(id)sender {
+
+      Home *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Home"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 @end

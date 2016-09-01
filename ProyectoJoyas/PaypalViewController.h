@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Home.h"
+#import "CatalogViewController.h"
 #import "PayPalMobile.h"
 #import "ShopCarTableCell.h"
 #import "Declarations.h"
 
-@interface PaypalViewController : UIViewController<PayPalPaymentDelegate>
+@interface PaypalViewController : UIViewController<PayPalPaymentDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong, readwrite) PayPalConfiguration *payPalConfiguration;
-@property (strong, nonatomic) IBOutlet UITableView *tblAmande;
-@property (strong, nonatomic) IBOutlet UIButton *btnBack;
+@property (strong, nonatomic) IBOutlet UITableView *tblShopCart;
+@property (strong, nonatomic) IBOutlet UIButton *btnAtraso;
 @property (strong, nonatomic) IBOutlet UILabel *lblTotalPagar;
+- (IBAction)btnAtras:(id)sender;
 
 
 

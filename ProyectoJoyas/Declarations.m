@@ -21,6 +21,8 @@ NSMutableArray  *maIntroImgs;
  NSMutableArray *array_stuffImgs;
 float         TotalApagar;
 
+int boDirectToShopCart = 0;
+
 @implementation Declarations
 
 @end

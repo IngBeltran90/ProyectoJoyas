@@ -21,5 +21,7 @@
 }
 
 - (IBAction)EliminarPressed:(id)sender {
+    [array_stuffNames removeObjectAtIndex:(0)];
+    
 }
 @end

@@ -14,6 +14,7 @@
 
 @implementation ShopViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -75,7 +76,7 @@
         
     }
     if ([segue.destinationViewController isKindOfClass:[PaypalViewController class]]) {
-        
+
         NSLog(@"entro a payapl");
 
         [array_stuffNames addObject:self.stuffNames];
