@@ -41,6 +41,7 @@
 		2BE045E71D6F747D001F7FEA /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE045E31D6F747D001F7FEA /* DigitsKit.framework */; };
 		2BE045E81D6F747D001F7FEA /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2BE045E41D6F747D001F7FEA /* DigitsKitResources.bundle */; };
 		2BE045E91D6F747D001F7FEA /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE045E51D6F747D001F7FEA /* TwitterCore.framework */; };
+		2BE794CB1D78965200AFA080 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BE794CA1D78965200AFA080 /* GoogleService-Info.plist */; };
 		8E34D7F11D72B3B80033D2D1 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E34D7E91D72B3B80033D2D1 /* libPayPalMobile.a */; };
 		8E34D7FE1D72B4140033D2D1 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E34D7FB1D72B4140033D2D1 /* libCardIO.a */; };
 		8E34D7FF1D72B4140033D2D1 /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E34D7FC1D72B4140033D2D1 /* libopencv_core.a */; };
@@ -109,6 +110,7 @@
 		2BE045E31D6F747D001F7FEA /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
 		2BE045E41D6F747D001F7FEA /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
 		2BE045E51D6F747D001F7FEA /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		2BE794CA1D78965200AFA080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A35B6A1B5D5FFED65D2630E /* Pods-ProyectoJoyas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoJoyas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProyectoJoyas/Pods-ProyectoJoyas.debug.xcconfig"; sourceTree = "<group>"; };
 		85CBBF5CBEBDFCC483559BC1 /* Pods_ProyectoJoyas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoJoyas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E34D7E91D72B3B80033D2D1 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		2B71AFA71D6BEC8E00DFB524 = {
 			isa = PBXGroup;
 			children = (
+				2BE794CA1D78965200AFA080 /* GoogleService-Info.plist */,
 				8E82F3A11D7279BA005FB780 /* Podfile */,
 				2BE045E21D6F747D001F7FEA /* Fabric.framework */,
 				2BE045E31D6F747D001F7FEA /* DigitsKit.framework */,
@@ -423,6 +426,7 @@
 				2BCB39501D6E3A3800722EC3 /* dije.jpg in Resources */,
 				2B71AFC61D6BEC8F00DFB524 /* LaunchScreen.storyboard in Resources */,
 				8E82F3A21D7279BA005FB780 /* Podfile in Resources */,
+				2BE794CB1D78965200AFA080 /* GoogleService-Info.plist in Resources */,
 				2BCB38EC1D6DF88500722EC3 /* cellAmande.xib in Resources */,
 				2B71AFC31D6BEC8F00DFB524 /* Assets.xcassets in Resources */,
 				2BBD6CC21D77672700455DF8 /* ShopCarTableCell.xib in Resources */,
@@ -460,7 +464,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B675C93C946862941580293D /* [CP] Copy Pods Resources */ = {

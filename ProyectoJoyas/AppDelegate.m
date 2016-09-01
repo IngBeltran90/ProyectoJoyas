@@ -10,6 +10,7 @@
 #import <Fabric/Fabric.h>
 #import <DigitsKit/DigitsKit.h>
 #import "PayPalMobile.h"
+#import <Google/Analytics.h>
 
 @import GoogleMaps;
 
@@ -22,6 +23,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    /*Google Analytics*/
+    // Configure tracker from GoogleService-Info.plist.
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+    
     // Override point for customization after application launch.
     //[Digits sharedInstance].sessionUpdateDelegate = self;
     [GMSServices provideAPIKey:@"AIzaSyCJOtLrQgcav1XujWopxcKcAyxHCfJ-P8w"];

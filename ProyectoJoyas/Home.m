@@ -7,6 +7,7 @@
 //
 
 #import "Home.h"
+#import <Google/Analytics.h>
 
 @interface Home ()
 @property NSMutableArray *stuffNames;
@@ -20,6 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initController];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    //[super viewWillAppear:animated];
+
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Home Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    // [END screen_view_hit_objc]
 }
 //-------------------------------------------------------------------------------
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,7 @@
 //
 
 #import "ShopViewController.h"
+#import <Google/Analytics.h>
 
 @interface ShopViewController ()
 
@@ -50,6 +51,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    //[super viewWillAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Tienda Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    // [END screen_view_hit_objc]
 }
 
 - (IBAction)changeLblTotal{

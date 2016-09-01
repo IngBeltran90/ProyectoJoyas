@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'ProyectoJoyas' do
 pod 'GoogleMaps'
+pod 'Google/Analytics'
 end

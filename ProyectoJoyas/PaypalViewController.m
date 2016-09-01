@@ -7,6 +7,7 @@
 //
 
 #import "PaypalViewController.h"
+#import <Google/Analytics.h>
 
 
 @interface PaypalViewController ()
@@ -28,6 +29,7 @@ float fTotalApagar;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)initController {
     fTotalApagar = 0;
     if (boDirectToShopCart == 1) {
@@ -140,6 +142,11 @@ float fTotalApagar;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIScreenName value:@"Paypal Screen"];
+        [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+        // [END screen_view_hit_objc]
     
     // Start out working with the test environment! When you are ready, switch to PayPalEnvironmentProduction.
     [PayPalMobile preconnectWithEnvironment:PayPalEnvironmentNoNetwork];

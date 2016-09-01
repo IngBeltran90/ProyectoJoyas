@@ -7,6 +7,7 @@
 //
 
 #import "CatalogViewController.h"
+#import <Google/Analytics.h>
 
 @interface CatalogViewController ()
 @property NSMutableArray *stuffNames;
@@ -28,6 +29,14 @@ NSInteger indexSelected;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)viewWillAppear:(BOOL)animated {
+    //[super viewWillAppear:animated];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Catalogo Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    // [END screen_view_hit_objc]
 }
 //-------------------------------------------------------------------------------
 - (void)initController {

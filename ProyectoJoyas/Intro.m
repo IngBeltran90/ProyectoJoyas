@@ -7,6 +7,7 @@
 //
 
 #import "Intro.h"
+#import <Google/Analytics.h>
 
 @interface Intro ()
 
@@ -30,6 +31,11 @@
 //-------------------------------------------------------------------------------
 
 -(void)viewWillAppear:(BOOL)animated {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Intro Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+
+    
     self.lblIntro.text  = maIntroTitles[self.iPageIndex];
     self.imgIntro.image = [UIImage imageNamed:maIntroImgs[self.iPageIndex]];
     
